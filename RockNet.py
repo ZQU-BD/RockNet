@@ -3,7 +3,7 @@ import torch.nn as nn
 
 class ConvBN(nn.Module):
     def __init__(self, in_channels, out_channels, k=1, s=1):
-        super(ConvBN).__init__()
+        super(ConvBN, self).__init__()
         self.conv = nn.Conv2d(in_channels, out_channels, k, s, k // 2, bias=False)
         self.bn = nn.BatchNorm2d(out_channels)
     
