@@ -39,13 +39,10 @@ def Balance_Alternate(labels, nw, dic_total_, batch_size, cross_count_):
     remainder = batch_size - (category_batch*len(labels))
 
     for keys_,values_ in dic_image_label.items():
-        image_folder = values_  # All images in the current category folder                 
-        if len(image_folder) > max_img_count:
-            max_img_count = len(image_folder)
-        image_list = []
-        for image_dir in image_folder:          # Traverse the images          
-            image_list.append(os.path.join(image_folder, image_dir))
-        label_img[keys_] = image_list
+        image_folder_values = values_  # All images in the current category folder                 
+        if len(image_folder_values) > max_img_count:
+            max_img_count = len(image_folder_values)
+        label_img[keys_] = image_folder_values
         label_img_count[keys_] = category_batch
 
     dic_count = {}
