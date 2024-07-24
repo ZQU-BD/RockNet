@@ -109,7 +109,7 @@ def main(args):
         if epoch != 0:
             # Determine whether need to alternate between training sets and validation sets
             if epoch % steps == 0:
-                train_loader, val_loader = Balance_Alternate(labels, nw, dic_total_, batch_size, cross_count_)
+                train_sampler, train_loader, val_sampler, val_loader = Balance_Alternate(labels, nw, dic_total_, batch_size, cross_count_)
                 cross_count_ += 1
     
         train_sampler.set_epoch(epoch)
